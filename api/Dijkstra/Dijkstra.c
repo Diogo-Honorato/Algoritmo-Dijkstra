@@ -71,6 +71,11 @@ int *dijkstra(Grafo *grafo, int verticeSource, int verticeSink)
                 }
             }
         }
+         if(verticeAtual == -1){
+        
+            printf("\nvertice de origem ou destino nao encontrado\n\n");
+            exit(0);
+        }
         verticeAtual = verticeMenorDistancia;
         verticeMenorDistancia = -1;
         visitados[verticeAtual] = 1;
