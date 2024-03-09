@@ -14,6 +14,9 @@ $(EXECUTABLE): $(OBJECTS)
 %.o: %.c $(HEADERS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+leak: $(EXECUTABLE)
+	@valgrind --leak-check=full ./$(EXECUTABLE)
+
 run: $(EXECUTABLE)
 	@./$(EXECUTABLE)
 	

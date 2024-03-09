@@ -26,7 +26,7 @@ Grafo *iniciarGrafo(Grafo *grafo)
         }
     }
 
-    grafo->quantidadeVertices = 2;
+    grafo->quantidadeVertices = 1;
 
     return grafo;
 }
@@ -74,7 +74,7 @@ Grafo *alocarNovoGrafo(Grafo *grafo, int numeroVertices)
         }
     }
 
-    // se o grafo começa no indice 1, subtraia em 2 a variavel 'numeroVertices' abaixo
+
     novoGrafo->quantidadeVertices = numeroVertices;
 
     liberarGrafo(grafo);
@@ -127,23 +127,21 @@ Grafo *adicionarAresta(Grafo *grafo, int verticeOrigem, int verticeDestino,int p
 void imprimirGrafo(Grafo *grafo)
 {
 
-    /*se o grafo começa no indice 1, somar em 1 a variavel 'grafo->quantidadeVertices' abaixo e
-     a variavel 'i' e 'j' receber o valor de 1 */
     int tamanhoMatriz = grafo->quantidadeVertices;
 
-    for (int i = 0; i < tamanhoMatriz; i++)
+    for (int i = 1; i < tamanhoMatriz; i++)
     {
 
         printf("\033[4m    %2d\033[0m", i);
     }
     printf("\n");
 
-    for (int i = 0; i < tamanhoMatriz; i++)
+    for (int i = 1; i < tamanhoMatriz; i++)
     {
 
         printf("%2d| ", i);
 
-        for (int j = 0; j < tamanhoMatriz; j++)
+        for (int j = 1; j < tamanhoMatriz; j++)
         {
 
             if (grafo->matriz[i][j] != 0)
