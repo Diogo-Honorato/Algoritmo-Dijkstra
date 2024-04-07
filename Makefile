@@ -3,7 +3,7 @@ COMPILADORC = gcc
 CFLAGS = -Wall -Wextra -march=native -O2 -g -lm
 
 # Nome do executável
-EXECUTABLE = executavel.exe
+EXECUTABLE = tp1.exe
 
 # Diretórios
 HEADER_DIR = Programa/Headers
