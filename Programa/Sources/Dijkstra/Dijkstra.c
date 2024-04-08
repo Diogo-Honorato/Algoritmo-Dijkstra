@@ -81,13 +81,11 @@ int *dijkstra(Grafo *grafo, int verticeOrigem, int verticeDestino)
 
         predecessores[i] = 0;
 
-        //inserindo todos os vertices do grafo na heap.
-        inserirFilaPrioridade(FP, tabelaDistancias[i], i);
     }
 
     tabelaDistancias[verticeOrigem] = 0;
 
-    diminuirChave(FP, 0, verticeOrigem); // alterando a distancia do vertice de origem na fila de prioridade.
+    inserirFilaPrioridade(FP,0,verticeOrigem);//inserindo o primeiro vertice
 
     while (1)
     {
@@ -124,7 +122,16 @@ int *dijkstra(Grafo *grafo, int verticeOrigem, int verticeDestino)
 
                     predecessores[i] = verticeAtual.vertice;
 
-                    diminuirChave(FP, tabelaDistancias[i], i);
+                    //verifica se o vertice ja esta presente na fila de prioridades
+                    //se nao estiver apenas inseri normalmente, mas se já estiver presente
+                    //apenas alteramos sua distancia na fila
+                    if(buscarNodeFilaPrioridade(FP,i)){
+                        
+                        diminuirChave(FP, tabelaDistancias[i], i);
+                    }else{
+
+                        inserirFilaPrioridade(FP, tabelaDistancias[i], i);
+                    }
                 }
             }
         }

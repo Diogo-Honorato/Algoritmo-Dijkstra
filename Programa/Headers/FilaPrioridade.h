@@ -34,6 +34,8 @@ void filaPrioridadeDown(FilaPrioridade *FP, int indice);
 
 void diminuirChave(FilaPrioridade *FP, int novaDistancia, int vertice);
 
+int buscarNodeFilaPrioridade(FilaPrioridade *FP,int vertice);
+
 void inserirFilaPrioridade(FilaPrioridade *FP, int distancia, int vertice);
 
 Node removerMin(FilaPrioridade *FP);

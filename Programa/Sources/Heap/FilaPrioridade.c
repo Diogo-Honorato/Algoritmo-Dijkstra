@@ -112,6 +112,18 @@ void diminuirChave(FilaPrioridade *FP, int novaDistancia, int vertice)
     filaPrioridadeUP(FP, indice);
 }
 
+int buscarNodeFilaPrioridade(FilaPrioridade *FP,int vertice){
+
+    int indice = FP->posVerticeHeap[vertice];
+
+    if(indice == -1){
+
+        return 0;
+    }
+
+    return indice;
+}
+
 void inserirFilaPrioridade(FilaPrioridade *FP, int distancia, int vertice)
 {
 
